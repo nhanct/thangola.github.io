@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: English | just a lazy admin]]></title>
+  <link href="http://thangola.github.io/blog/categories/english/atom.xml" rel="self"/>
+  <link href="http://thangola.github.io/"/>
+  <updated>2014-01-04T10:56:33+07:00</updated>
+  <id>http://thangola.github.io/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ Count IP Addresses in Access Log File]]></title>
+    <link href="http://thangola.github.io/blog/2014/01/04/count-ip-addresses-in-access-log-file/"/>
+    <updated>2014-01-04T10:46:32+07:00</updated>
+    <id>http://thangola.github.io/blog/2014/01/04/count-ip-addresses-in-access-log-file</id>
+    <content type="html"><![CDATA[<p>Leader: Hey Bob. Recently, Our server was nearly overloaded by a web spider that was severely stupid and malfunctioning
+you must find which IP address was making the most requests and block cmnd.
+Bod: Ok. One bash line will solve it.</p>
+
+<p>```
+sudo tail -10000 /var/log/nginx/thiendia.com.log | awk ‘{print $1}’ | sort | uniq -c | sort -g</p>
+
+<p>```</p>
+
+<p>line explain:</p>
+
+<p>tail -10000 /var/log/nginx/thiendia.com.log => grep last 10000 lines in access log of webserver
+awk ‘{print $1}’ : grep first collum of access_log
+sort | uniq -c | sort -g : prefix ips by the number of occurrence then compare according to general numerical value</p>
+
+<p>example output:
+69:   124.115.3.33
+96:   124.115.5.169
+6996:   66.219.73.236
+9669:   74.204.11.20</p>
+]]></content>
+  </entry>
+  
+</feed>
